@@ -14,17 +14,35 @@ function UsersForm() {
         const [file] = imgInp.files;
         if (file) {
             blah.src = URL.createObjectURL(file);
-            setForm({ ...form, foto: file});
+            setForm({ ...form, foto: file });
         }
     }
-    
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(form);
+
+    const formValidation = (form) => {
+        if (form.nome == "") {
+            alert("Nome inválido");
+            return false;
+        }
+        if (form.dataNasc == "") {
+            alert("Data de Nascimento inválida");
+            return false;
+        }
+        if (form.foto == null) {
+            alert("Foto inválida");
+            return false;
+        }
+        return true;
     }
 
-    const handleFormChange = (param: string) => (e: any) => {
-        setForm({ ...form, [param]: e.target.value });
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (formValidation(form)) console.log("submit");
+    }
+
+    const handleFormChange = (param) => (e) => {
+        {
+            setForm({ ...form, [param]: e.target.value });
+        }
     };
 
     return (
@@ -48,14 +66,18 @@ function UsersForm() {
                         onInput={handleFormChange("dataNasc")}
                     />
                 </label>
-                <label className="imgInput">
+                <label>
                     Foto
                     <input
                         type="file"
                         accept="image/*"
+                        className="form-control mb-1"
                         onChange={showPreview}
                     />
-                    <img id="blah" src="#" alt="your image" />
+                </label>
+                <label>
+                    Preview
+                    <img id="blah" src="#" />
                 </label>
                 <input className="btn btn-primary btn-block mt-1" type="submit" />
             </form>

@@ -12,11 +12,3 @@
 .userForm label img {
     width: 100px;
 }
-.imgInput input {
-    width: 50%;
-    border: 1px solid #ddd;
-}
-.imgInput img {
-    width: 50%;
-    margin-left: 15px;
-}

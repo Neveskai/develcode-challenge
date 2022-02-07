@@ -1,8 +1,23 @@
 import './Users.css';
 import { Link } from "react-router-dom"
+import { faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Users(props) {
     const users = props.users;
+
+    const editUser = (id) => {
+        console.log("open form to edit"+ id)
+    }
+
+    const delUser = (id) => {
+        if (window.confirm("Deseja realmente excluir o usuário de id: "+id+" ?")) {
+            console.log("deleted");
+        } else {
+            console.log("cancel")
+        }
+    }
+
     return (
         <section>
             <div className="table-header text-center mb-1">
@@ -16,6 +31,8 @@ function Users(props) {
                         <th> Nome </th>
                         <th> Data de Nascimento </th>
                         <th> Foto </th>
+                        <th> Editar</th>
+                        <th> Excluir </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -26,6 +43,8 @@ function Users(props) {
                                 <td>{user.nome}</td>
                                 <td>{user.dataNasc}</td>
                                 <td>{user.foto}</td>
+                                <td><FontAwesomeIcon onClick={()=>{ editUser(user.cod)}} icon={faPencilAlt} /></td>
+                                <td><FontAwesomeIcon onClick={()=>{ delUser(user.cod)}} icon={faTrashAlt} /></td>
                             </tr>
                         )
                     })}
