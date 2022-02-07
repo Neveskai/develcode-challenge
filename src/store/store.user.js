@@ -1,20 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const User = createSlice({
-    name: 'user',
+export const Users = createSlice({
+    name: 'users',
     initialState: {
-        id: 0,
-        name: ''
+        users: [{
+            cod: 1,
+            nome: 'Wendell',
+            dataNasc: '1997-05-01',
+            foto: ''
+        },{
+            cod: 2,
+            nome: 'Wallace',
+            dataNasc: '1999-11-11',
+            foto: ''
+        }]
     },
     reducers: {
         setUser(state, data) {
-            state.id = data.payload.id;
-            state.name = data.payload.name;
+            state[data.payload.index].cod = data.payload.cod;
+            state[data.payload.index].nome = data.payload.nome;
         }
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { setUser } = User.actions
+export const { setUser } = Users.actions
 
-export default User.reducer
+export default Users.reducer
