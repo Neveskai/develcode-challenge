@@ -1,8 +1,9 @@
 import './App.css'
-import { Routes, Route, Link } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import { useSelector } from 'react-redux'
 import Home from "./components/home/Home"
 import Users from "./components/users/Users"
+import UserForm from "./components/users-form/UserForm"
 import Header from './components/header/Header'
 import { faHome, faUser } from '@fortawesome/free-solid-svg-icons'
 
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/users" element={<Users users={users} />} />
+        <Route path="/newuser" element={<UserForm />} />
       </Routes>
     </div>
   );

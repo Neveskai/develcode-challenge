@@ -1,12 +1,13 @@
 import './Users.css';
+import { Link } from "react-router-dom"
 
 function Users(props) {
     const users = props.users;
     return (
         <section>
-            <div className="table-header text-center">
+            <div className="table-header text-center mb-1">
                 <h5>Usuários</h5>
-                <button className="btn btn-primary">New User</button>
+                <Link to="/newuser" className="btn btn-primary">New User</Link>
             </div>
             <table className="table">
                 <thead>

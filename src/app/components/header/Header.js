@@ -25,10 +25,10 @@ export default function Header(props) {
 
     return (
         <header id="header" className="row">
-            <div className="col-md-3 col-12">
+            <div className="col-md-4 col-12">
                 <h2 className="text-center text-md-left"> {title} </h2>
             </div>
-            <div className="col-md-9 text-md-right col-12 text-center p-0 m-md-0 mt-2">
+            <div className="col-md-8 text-md-right col-12 text-center p-0 m-md-0 mt-2">
                 <section className="d-inline-flex pl-1">
                     {routes.map(function (route, i) {
                         if (route.navmenu) {
