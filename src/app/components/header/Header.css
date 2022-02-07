@@ -1,0 +1,63 @@
+#header {
+	padding: 5px 1.5% 10px 1.4%;
+	margin: 0;
+	z-index: 2;
+	display: inline-flex;
+	background: #e9e9e9;
+	color: #222;
+	width: 100%;
+}
+#header h2 { 
+	font-size: 152%;
+	margin-top: 5px; 
+	margin-bottom: 0px; 
+}
+#header h2 img {
+	width: 25px;
+	margin-top: -6px;
+}
+
+.highlight{
+	color: #0066d0 !important;
+}
+.navi {
+	line-height: 14px;
+}
+.navi a {
+	text-decoration: none;
+	underline: none;
+	color: #222;
+	font-size: 13px;
+}
+.navi i {
+	transition: 0.5s;
+}
+.navi span {
+	font-size: 12px;
+	white-space: nowrap;
+	transition: 0.5s;
+}
+.navi:hover span, .navi:hover i {
+	color: #00bb80;
+}
+
+#home-btn {
+	right: 5%; 
+	position: absolute;
+	text-align: right;
+	color: #0066cc;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+@media only screen and (max-device-width: 800px) {
+	#home-btn {
+		top: -6px;
+	}
+	.navi i {
+		font-size: 11px !important;
+	}
+	.navi span {
+		font-size: 10.5px !important;
+	}
+}
