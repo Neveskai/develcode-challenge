@@ -13,6 +13,7 @@ function App() {
     { id: 2, navmenu: true, q: '', text: 'Home', path: '/', icon: faHome }
   ];
   const users = useSelector((state) => state.users.users);
+  
   return (
     <div className="App">
       <Header title="Sample User Register" routes={routes}></Header>
