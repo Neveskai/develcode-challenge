@@ -1,5 +1,5 @@
 import './Users.css';
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom'
 import { faPencilAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -22,7 +22,7 @@ function Users(props) {
         <section>
             <div className="table-header text-center mb-1">
                 <h5>Usuários</h5>
-                <Link to="/newuser" className="btn btn-primary">New User</Link>
+                <Link to="/userform" className="btn btn-primary">New User</Link>
             </div>
             <table className="table">
                 <thead>
@@ -43,8 +43,8 @@ function Users(props) {
                                 <td>{user.nome}</td>
                                 <td>{user.dataNasc}</td>
                                 <td>{user.foto}</td>
-                                <td><FontAwesomeIcon onClick={()=>{ editUser(user.cod)}} icon={faPencilAlt} /></td>
-                                <td><FontAwesomeIcon onClick={()=>{ delUser(user.cod)}} icon={faTrashAlt} /></td>
+                                <td><FontAwesomeIcon onClick={()=>{ editUser(user)}} icon={faPencilAlt} /></td>
+                                <td><FontAwesomeIcon onClick={()=>{ delUser(user)}} icon={faTrashAlt} /></td>
                             </tr>
                         )
                     })}

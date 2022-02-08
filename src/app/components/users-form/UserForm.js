@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './UserForm.css';
 
-function UsersForm() {
+const UsersForm = () => {
+
     const [form, setForm] = useState({
         nome: "",
         dataNasc: "",
@@ -19,15 +20,15 @@ function UsersForm() {
     }
 
     const formValidation = (form) => {
-        if (form.nome == "") {
+        if (form.nome === "") {
             alert("Nome inválido");
             return false;
         }
-        if (form.dataNasc == "") {
+        if (form.dataNasc === "") {
             alert("Data de Nascimento inválida");
             return false;
         }
-        if (form.foto == null) {
+        if (form.foto === null) {
             alert("Foto inválida");
             return false;
         }
@@ -40,9 +41,7 @@ function UsersForm() {
     }
 
     const handleFormChange = (param) => (e) => {
-        {
-            setForm({ ...form, [param]: e.target.value });
-        }
+        setForm({ ...form, [param]: e.target.value });
     };
 
     return (
@@ -77,7 +76,7 @@ function UsersForm() {
                 </label>
                 <label>
                     Preview
-                    <img id="blah" src="#" />
+                    <img id="blah" src="#" alt="your profile" />
                 </label>
                 <input className="btn btn-primary btn-block mt-1" type="submit" />
             </form>
