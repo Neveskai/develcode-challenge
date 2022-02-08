@@ -25,3 +25,7 @@
 .table-l th {
     border-bottom: 0 !important;
 }
+
+.profilePicture {
+    height: 40px;
+}
