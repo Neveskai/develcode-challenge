@@ -1,31 +1,37 @@
+.table {
+    border-bottom: 1px solid #ddd;
+}
 .table tbody, .table thead {
     border-top: 0 !important;
 }
-
 .table-header h5 {
     padding: 6px;
     margin: 0;
 }
-
-
 .table-header .btn.btn-primary{
     position: absolute;
     transform: translate(0,-100%);
-    margin-top: -2px;
-    left: 5px;
+    right: 15px;
+    border-radius: 2px;
     font-weight: 500;
     padding: 3px 12px;
 }
-
-.table-l {
-    line-height: 14px;
-    font-size: 13px;
+.btn-hover {
+    cursor: pointer;
 }
 
+.table-l {
+    line-height: 35px;
+    font-size: 14px;
+    padding: 0;
+}
+.table-l td, .table-l th {
+    padding: 0px !important;
+}
 .table-l th {
     border-bottom: 0 !important;
 }
 
 .profilePicture {
-    height: 40px;
+    height: 35px;
 }

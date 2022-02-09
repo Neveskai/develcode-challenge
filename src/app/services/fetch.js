@@ -1,9 +1,9 @@
 export const api_dir = 'http://localhost:3001';
 export const file_dir = 'http://localhost:3002';
 
-export function request(url, object, method = 'GET'){
+export function request(url, object, method = 'GET') {
 	var config;
-	if(method === 'GET'){
+	if (method === 'GET') {
 		config = {
 			method: method,
 			mode: 'cors'
@@ -19,10 +19,10 @@ export function request(url, object, method = 'GET'){
 		};
 	}
 	var p = fetch(url, config)
-	.then(resp => resp.json())
-	.then(resp => { 
-		return resp; 
-	})
+		.then(resp => resp.json())
+		.then(resp => {
+			return resp;
+		})
 	return p;
 }
 
@@ -34,9 +34,9 @@ export function uploadFile(url, file) {
 		mode: 'cors',
 		body: formData
 	})
-	.then(resp => resp.json())
-	.then(resp => { 
-		return resp; 
-	})
+		.then(resp => resp.json())
+		.then(resp => {
+			return resp;
+		})
 	return p;
 }
